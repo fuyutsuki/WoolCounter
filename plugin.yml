@@ -1,0 +1,28 @@
+name: WoolsCounter
+main: counter\Main
+version: 1.0.0
+api:
+  - 2.0.0
+  - 3.0.0
+author: fuyutsuki
+website: https://twitter.com/y_fyi
+description: WoolCounter, simple.
+
+commands:
+ e:
+  description: 範囲指定を解除します。
+  usage: "/e"
+  permission: counter.command.e
+
+permissions:
+ counter.*:
+  default: op
+  description: "permission that allows player to use counter"
+  children:
+   counter.command.*:
+    default: op
+    description: "permission that allows player to use counter"
+    children:
+      counter.command.e:
+        default: true
+        description: "permission that allows player to use counter"
